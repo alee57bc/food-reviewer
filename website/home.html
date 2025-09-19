@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> "Brand Name" | Main Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="topNav">
+            <!-- need to add hamburger menu here-->
+            <a class="active" id="navLink" href="home.html">Home</a>
+            <a id="navLink" href="reviews.html" >Reviews</a>
+            <a id="navLink" href="activity.html">Activity</a>
+            <a id="navLink" href="search.html">Search</a>
+        </div>
+
+        <div id="interactiveMap" style="width:100%;height:700px;"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6s-2FYx4bGBGqycBPpCNmewM8Wk3JtVg&callback=initMap"></script>
+        
+        <script>
+            function initMap() {
+                var myCenter = new google.maps.LatLng(40.792,-77.8570);
+                var mapProp = {
+                center: myCenter, 
+                zoom:16,
+                };
+                
+                var map = new google.maps.Map(document.getElementById("interactiveMap"), mapProp);
+            
+                var marker = new google.maps.Marker({
+                    position:myCenter,
+
+                });
+
+                marker.setMap(map);
+            }
+
+
+        </script>
+
+    </body>
+
+</html>
